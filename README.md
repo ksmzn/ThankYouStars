@@ -9,7 +9,7 @@ A tool for starring GitHub repositories of R package.
 Install
 
 ```console
-$ devtools::install_github("ksmzn/ThankYouStars")
+> devtools::install_github("ksmzn/ThankYouStars")
 ```
 
 Save your GitHub personal access token
