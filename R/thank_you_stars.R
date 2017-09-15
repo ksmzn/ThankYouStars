@@ -10,6 +10,7 @@ user_starred_url <- paste0(default_api_url, '/user/starred')
 
 pattern_github <- '^http[s]://github.com'
 
+#'@export
 #'@importFrom httr add_headers PUT
 thank_you_stars <- function(.token = NULL) {
   token = if (!is.null(.token)) .token else read_token()
