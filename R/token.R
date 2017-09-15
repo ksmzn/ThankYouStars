@@ -2,12 +2,12 @@
 read_token_from_json <- function() {
   configPath <- file.path(path.expand('~'), '.thank-you-stars.json')
   if (!file.exists(configPath)) {
-    return(character())
+    return(NULL)
   }
 
   token <- jsonlite::fromJSON(configPath)[['token']]
   if (is.null(token)) {
-    return(character())
+    return(NULL)
   }
   return(token)
 }
@@ -15,14 +15,16 @@ read_token_from_json <- function() {
 read_token_from_env <- function() {
   token <- Sys.getenv('GITHUB_PAT', '')
   if (token == '')
-    Sys.getenv('GITHUB_TOKEN', '')
+    token <- Sys.getenv('GITHUB_TOKEN', '')
+  if (token == '')
+    NULL
   else
     token
 }
 
 read_token <- function() {
   token <- read_token_from_json()
-  if (token == '') {
+  if (is.null(token)) {
     token <- read_token_from_env()
   }
   return(token)

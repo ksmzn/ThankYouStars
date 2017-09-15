@@ -14,6 +14,7 @@ pattern_github <- '^http[s]://github.com'
 #'@importFrom httr add_headers PUT
 thank_you_stars <- function(.token = NULL) {
   token = if (!is.null(.token)) .token else read_token()
+  if (is.null(token)) stop("Required GitHub token.")
   github_config <- httr::add_headers('Authorization' = paste('token', token))
   pkgs <- get_pkgs_url()
   if (length(pkgs) != 0) {
@@ -49,9 +50,10 @@ github_check <- function(req) {
   return(paste(req$status_code, message, ":"))
 }
 
+#'@importFrom httr content
 #'@importFrom jsonlite fromJSON
 github_parse <- function(req) {
-  text <- content(req, as = 'text')
+  text <- httr::content(req, as = 'text')
   if (identical(text, ''))
     stop('No output to parse', call. = FALSE)
   jsonlite::fromJSON(text, simplifyVector = FALSE)
