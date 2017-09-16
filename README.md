@@ -3,25 +3,26 @@ ThankYouStars
 
 A tool for starring GitHub repositories of R package.
 
-
-## Setup
-
-Install
+## Installation
 
 ```console
 > devtools::install_github("ksmzn/ThankYouStars")
 ```
 
+## Setup
+
 Save your GitHub personal access token
 
 1. Open https://github.com/settings/tokens and click "Generate new token"
 2. Input desc, select only "public_repo" as scope and click "Generate token"
-3. Copy the token and save as `~/.thank-you-stars.json`.
+3. Copy the token and save as `~/.thank-you-stars.json`,
 ```json
 {
     "token": "YOUR_TOKEN"
 }
 ```
+
+Alternatively, one can set the `GITHUB_PAT` environment variable or the `.token` argument of `thank_you_stars()` like [`gh` package](https://github.com/r-lib/gh).
 
 ## Usage
 

@@ -10,6 +10,6 @@ BugReports: https://github.com/ksmzn/ThankYouStars/issues
 Imports:
   httr,
   jsonlite
-License: MIT
+License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 6.0.1

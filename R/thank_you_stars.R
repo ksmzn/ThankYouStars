@@ -10,8 +10,17 @@ user_starred_url <- paste0(default_api_url, '/user/starred')
 
 pattern_github <- '^http[s]://github.com'
 
-#'@export
-#'@importFrom httr add_headers PUT
+#' @title Starring Sependencies
+#'
+#' @description Send stars to installed packages on GitHub
+#' @param .token your github token
+#' @export
+#' @importFrom httr add_headers PUT
+#' @examples
+#' thank_you_stars()
+#' \dontrun{
+#' thank_you_stars(.token="<your-github-token>")
+#' }
 thank_you_stars <- function(.token = NULL) {
   token = if (!is.null(.token)) .token else read_token()
   if (is.null(token)) stop("Required GitHub token.")
@@ -27,8 +36,9 @@ thank_you_stars <- function(.token = NULL) {
   }
 }
 
+#' @importFrom utils installed.packages
 get_pkgs_url <- function() {
-  pkgs <- installed.packages(priority = 'NA', fields = 'URL')[, 'URL']
+  pkgs <- utils::installed.packages(priority = 'NA', fields = 'URL')[, 'URL']
   pkgs <- strsplit(pkgs, '( |,|#|\n|\t|\\(|\\))')
 
   # Filtering
