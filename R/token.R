@@ -22,10 +22,13 @@ read_token_from_env <- function() {
     token
 }
 
-read_token <- function() {
-  token <- read_token_from_json()
+read_token <- function(token=NULL) {
+  if (is.null(token)) {
+    token <- read_token_from_json()
+  }
   if (is.null(token)) {
     token <- read_token_from_env()
   }
+  if (is.null(token)) stop("Required GitHub token.")
   return(token)
 }
