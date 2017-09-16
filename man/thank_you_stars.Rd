@@ -13,8 +13,8 @@ thank_you_stars(.token = NULL)
 Send stars to installed packages on GitHub
 }
 \examples{
-thank_you_stars()
 \dontrun{
+thank_you_stars()
 thank_you_stars(.token="<your-github-token>")
 }
 }
