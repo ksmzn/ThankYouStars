@@ -5,8 +5,8 @@
 #' @export
 #' @importFrom httr add_headers PUT
 #' @examples
-#' thank_you_stars()
 #' \dontrun{
+#' thank_you_stars()
 #' thank_you_stars(.token="<your-github-token>")
 #' }
 thank_you_stars <- function(.token = NULL) {
