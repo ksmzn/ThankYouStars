@@ -55,6 +55,3 @@ Starred! https://github.com/hadley/xml2
 | Haskell    | y-taka-23 | https://github.com/y-taka-23/thank-you-stars |
 | R          | ksmzn     | https://github.com/ksmzn/ThankYouStars       |
 
-## License
-
-MIT License: Naoto Koshimizu &lt;orehacks@gmail.com&gt;
