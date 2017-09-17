@@ -1,7 +1,7 @@
-#' @title Starring Sependencies
+#' @title Star For Dependency Packages
 #'
-#' @description Send stars to installed packages on GitHub
-#' @param .token your github token
+#' @description Send stars to installed packages on GitHub.
+#' @param .token your GitHub token
 #' @export
 #' @importFrom httr add_headers PUT
 #' @examples

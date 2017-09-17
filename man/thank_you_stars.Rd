@@ -2,15 +2,15 @@
 % Please edit documentation in R/thank_you_stars.R
 \name{thank_you_stars}
 \alias{thank_you_stars}
-\title{Starring Sependencies}
+\title{Star For Dependency Packages}
 \usage{
 thank_you_stars(.token = NULL)
 }
 \arguments{
-\item{.token}{your github token}
+\item{.token}{your GitHub token}
 }
 \description{
-Send stars to installed packages on GitHub
+Send stars to installed packages on GitHub.
 }
 \examples{
 \dontrun{
