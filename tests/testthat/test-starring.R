@@ -2,6 +2,7 @@ context("userdata")
 
 with_mock(
   "ThankYouStars:::get_pkgs_url" = function(...) c("https://github.com/ksmzn/ThankYouStars"),
+  "ThankYouStars:::read_token" = function(...) NULL,
   "httr::PUT" = function(...) {
     list(..., status_code = 204)
   },
@@ -12,6 +13,7 @@ with_mock(
 
 with_mock(
   "ThankYouStars:::get_pkgs_url" = function(...) c("https://github.com/ksmzn/NotExistRepo"),
+  "ThankYouStars:::read_token" = function(...) NULL,
   "httr::PUT" = function(...) {
     structure(list(
       content = readRDS('put_to_not_exist_repo.rds'),  # tests/testthat/ からの相対パスになる
