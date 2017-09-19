@@ -1,3 +1,4 @@
-# ThankYouStars 0.1.0
+# ThankYouStars 0.1.1
 
-* First CRAN release
+* Support packages which are installed by devtool.
+* Bug fix

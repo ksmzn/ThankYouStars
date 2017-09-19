@@ -6,5 +6,5 @@
 \alias{ThankYouStars-package}
 \title{ThankYouStars}
 \description{
-Give your dependencies stars on GitHub!
+Give your Dependencies Stars on GitHub!
 }

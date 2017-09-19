@@ -15,26 +15,10 @@ thank_you_stars <- function(.token = NULL) {
     token <- read_token(.token)
     github_config <- httr::add_headers('Authorization' = paste('token', token))
     for (repo_url in pkgs) {
-      endpoint <- gsub(pattern_github, user_starred_url, repo_url)
+      endpoint <- paste(USER_STARRED_URL, repo_url, sep="/")
       req <- httr::PUT(endpoint, config = github_config)
       result <- github_check(req)
       message(result, ' ', repo_url)
     }
   }
-}
-
-#' @importFrom utils installed.packages
-get_pkgs_url <- function() {
-  pkgs <- utils::installed.packages(priority = 'NA', fields = 'URL')[, 'URL']
-  pkgs <- strsplit(pkgs, '( |,|#|\n|\t|\\(|\\))')
-
-  # Filtering
-  pkgs <- grep(pattern_github, pkgs, value = TRUE)
-
-  # split to ('https:', '', 'github.com', ':owner', ':repo', others)
-  pkgs <- strsplit(pkgs, '/')
-  pkgs <-
-    sapply(pkgs, function(vec)
-      paste(vec[1:5], collapse = '/'))
-  return(pkgs)
 }

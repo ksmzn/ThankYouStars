@@ -1,4 +1,4 @@
-context("userdata")
+# context("starring")
 
 with_mock(
   "ThankYouStars:::get_pkgs_url" = function(...) c("https://github.com/ksmzn/ThankYouStars"),
@@ -16,7 +16,7 @@ with_mock(
   "ThankYouStars:::read_token" = function(...) NULL,
   "httr::PUT" = function(...) {
     structure(list(
-      content = readRDS('put_to_not_exist_repo.rds'),  # tests/testthat/ からの相対パスになる
+      content = readRDS('put_to_not_exist_repo.rds'),
       url = '',
       headers = list(`Content-Type` = "application/json;charset=utf-8"),
       status_code = 404
