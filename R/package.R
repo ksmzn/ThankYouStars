@@ -1,14 +1,12 @@
 #' ThankYouStars
 #'
-#' Give your dependencies stars on GitHub!
+#' Give your Dependencies Stars on GitHub!
 #' @docType package
 #' @name ThankYouStars
 NULL
 
 ## Main API URL
-default_api_url <- 'https://api.github.com'
+DEFAULT_API_URL <- 'https://api.github.com'
 
 ## Starring endpoint
-user_starred_url <- paste0(default_api_url, '/user/starred')
-
-pattern_github <- '^http[s]://github.com'
+USER_STARRED_URL <- paste0(DEFAULT_API_URL, '/user/starred')
