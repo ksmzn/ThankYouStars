@@ -4,8 +4,12 @@ GITHUB_PATTERN <- '^https?://github.com'
 get_pkgs_url <- function() {
   pkgs <-
     utils::installed.packages(priority = 'NA',
-                              fields = c('URL', 'GithubRepo', 'GithubUsername'))
-  repos_from_cran <- filter_github_cran(pkgs[, c('URL')])
+                              fields = c('URL', 'BugReports', 'GithubRepo', 'GithubUsername'))
+
+  repos_from_cran_url <- filter_github_cran(pkgs[, c('URL')])
+  repos_from_cran_bugreports <- filter_github_cran(pkgs[, c('BugReports')])
+  repos_from_cran <- union(repos_from_cran_url, repos_from_cran_bugreports)
+
   repos_by_devtools <-
     filter_github_devtool(pkgs[, c('GithubRepo', 'GithubUsername')])
   repos <- union(repos_from_cran, repos_by_devtools)
