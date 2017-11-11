@@ -1,4 +1,4 @@
-# ThankYouStars 0.1.1
+# ThankYouStars 0.2.0
 
 * Support packages which are installed by devtool.
-* Bug fix
+* Check BugReports as well
