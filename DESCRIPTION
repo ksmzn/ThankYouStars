@@ -1,7 +1,7 @@
 Package: ThankYouStars
 Type: Package
 Title: Give your Dependencies Stars on GitHub!
-Version: 0.1.1
+Version: 0.2.0
 Authors@R: c(person(given = "Naoto", family = "Koshimizu", email = "orehacks@gmail.com", role  = c("aut", "cre")))
 Maintainer: Naoto Koshimizu <orehacks@gmail.com>
 Description: A tool for starring GitHub repositories.
